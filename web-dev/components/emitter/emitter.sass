@@ -1,5 +1,8 @@
 $emitter-element-width: 300px
 
+$emitter-element-color: lightblue
+$emitter-element-highlight: yellow
+
 .emitter
   width: $emitter-element-width
   min-height: 100%
@@ -8,10 +11,12 @@ $emitter-element-width: 300px
   display: inline-block
 
   ul > li
-    color: lightblue
+    display: block
+    padding: 2px 0 2px 10px
+    color: $emitter-element-color
 
   ul > li:hover
-    color: yellow
+    color: $emitter-element-highlight
 
 .emitter-container
   display: block

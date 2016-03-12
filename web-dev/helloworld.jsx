@@ -1,7 +1,7 @@
 // TODO: This is temporary data for testing purposes. Eventually this information will be retrieved from the server
 var testEmitters = [
     {
-        name: 'Example A',
+        name: 'Emitter A',
         properties: [
             {
                 name: 'Lifetime',
@@ -18,7 +18,7 @@ var testEmitters = [
         ]
     },
     {
-        name: 'Example B',
+        name: 'Second Emitter',
         properties: [
             {
                 name: 'Property',
@@ -27,7 +27,7 @@ var testEmitters = [
         ]
     },
     {
-        name: 'Example C',
+        name: 'Third',
         properties: [
             {
                 name: 'Discover',
