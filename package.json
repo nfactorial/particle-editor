@@ -11,6 +11,9 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "eslint-config-google": "^0.4.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-sass": "^2.2.0",
     "webpack": "^1.12.14"
   },
   "dependencies": {
