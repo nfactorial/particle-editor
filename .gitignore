@@ -1,0 +1,19 @@
+#
+node_modules
+
+# Mac cache information
+.DS_Store
+
+# WebStorm IDE settings are local only
+.idea
+
+# Do not put build or distribution folders into source-control
+build
+dist
+
+# No need to version control generated files
+web-dev/**/*.html
+web-dev/**/*.css
+web-dev/**/*.css.map
+web-dev/**/*-compiled.js
+web-dev/**/*-compiled.js.map

@@ -1,0 +1,10 @@
+{
+    "development": {
+        "fileMap": [
+            {
+                "url": "/",
+                "path": "/web-dev/index.html"
+            }
+        ]
+    }
+}

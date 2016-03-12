@@ -1,0 +1,29 @@
+{
+    "development": {
+        "port": 9000,
+        "folderMap": [
+            {
+                "url": "/",
+                "path": "/web-dev"
+            },
+            {
+                "url": "/js",
+                "path": "/web-dev/js"
+            },
+            {
+                "url": "/node_modules",
+                "path": "/node_modules"
+            }
+        ],
+        "fileMap": [
+            {
+                "url": "/",
+                "path": "/web-dev/index.html"
+            },
+            {
+                "url": "/example",
+                "path": "/web-dev/example/index.html"
+            }
+        ]
+    }
+}

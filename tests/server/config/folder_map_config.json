@@ -1,0 +1,10 @@
+{
+    "development": {
+        "folderMap": [
+            {
+                "url": "/",
+                "path": "/web-dev"
+            }
+        ]
+    }
+}

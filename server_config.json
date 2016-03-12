@@ -1,0 +1,34 @@
+{
+    "development": {
+        "port": 3000,
+        "folderMap": [
+            {
+                "url": "/",
+                "path": "/web-dev"
+            },
+            {
+                "url": "/js",
+                "path": "/web-dev/js"
+            },
+            {
+                "url": "/node_modules",
+                "path": "/node_modules"
+            }
+        ],
+        "fileMap": [
+            {
+                "url": "/",
+                "path": "/web-dev/index.html"
+            }
+        ]
+    },
+    "master": {
+        "port": 1337,
+        "folderMap": [
+            {
+                "url": "/",
+                "path": "/web-dev"
+            }
+        ]
+    }
+}
