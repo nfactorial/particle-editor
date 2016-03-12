@@ -18,10 +18,8 @@ var AssetNavigator = React.createClass({
         return (
             <div className="particle-explorer" style={style}>
                 <PreviewContainer title="Preview" className="preview-panel"/>
-                <EmitterExplorer data={this.props.data} className="emitter-panel"/>
+                <EmitterExplorer data={this.props.data} />
             </div>
         );
     }
 });
-
-

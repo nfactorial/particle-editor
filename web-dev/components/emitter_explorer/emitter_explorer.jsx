@@ -23,7 +23,7 @@ var EmitterExplorer = React.createClass({
         });
 
         return (
-            <div className={className}>
+            <div className="emitter-panel">
                 <p className="section-header">Emitters</p>
                 <div className="emitter-container" style={containerStyle}>
                     {elements}

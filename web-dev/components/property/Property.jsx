@@ -2,6 +2,6 @@
 
 var Property = React.createClass({
     render: function() {
-        return ( <h1>I am a property!</h1> );
+        return ( <p>{this.props.name}</p> );
     }
 });

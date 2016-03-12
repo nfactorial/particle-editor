@@ -37,9 +37,13 @@ var testEmitters = [
     }
 ];
 
+var selectedElement = testEmitters[0];
 
 
 ReactDOM.render(
-    <AssetNavigator data={testEmitters}/>,
+    <div>
+        <AssetNavigator data={testEmitters}/>
+        <PropertyExplorer data={selectedElement} />
+    </div>,
     document.getElementById('example')
 );
