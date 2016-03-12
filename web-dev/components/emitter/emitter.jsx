@@ -8,16 +8,17 @@ var Emitter = React.createClass({
         var propertyElements = this.props.data.properties.map( e => {
             return (
                 <li key={e.name}>
-                    <input type="checkbox" autoComplete="off" />
+                    <input type="checkbox" autoComplete="off" checked="checked"/>
+                    {e.name}
                 </li>
             );
         });
 
         return (
-            <div className="emitter-header">{this.props.data.name}</div>
-            <ul className="list-inline">
-                {propertyElements}
-            </ul>
+            <div className="emitter">
+                <p className="section-header">{this.props.data.name}</p>
+                <ul className="list-inline">{propertyElements}</ul>
+            </div>
         );
     }
 });

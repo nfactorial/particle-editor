@@ -9,6 +9,8 @@ var AssetNavigator = React.createClass({
         return { height: 200 };
     },
     render: function() {
+        // We use a state variable for the height, as the intent is to allow the
+        // user to resize the pane dynamically in the future.
         var style = {
             height: this.state.height + 'px'
         };

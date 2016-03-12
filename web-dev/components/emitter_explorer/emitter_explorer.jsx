@@ -7,8 +7,15 @@
  * inspection of the selected items properties.
  */
 var EmitterExplorer = React.createClass({
+    getInitialState: function() {
+        return { width: 0, emitterWidth: 300 };
+    },
     render: function() {
+        var containerWidth = ( this.state.emitterWidth * this.props.data.length );
+        var containerStyle = { width: containerWidth + "px" };
+
         var className = "panel " + this.props.className;
+
         var elements = this.props.data.map(e => {
             return (
                 <Emitter key={e.name} data={e} />
@@ -18,7 +25,9 @@ var EmitterExplorer = React.createClass({
         return (
             <div className={className}>
                 <p className="section-header">Emitters</p>
-                {elements}
+                <div className="emitter-container" style={containerStyle}>
+                    {elements}
+                </div>
             </div>
         );
     }
