@@ -1,11 +1,14 @@
 "use strict";
 
+import React from 'react'
+import RendererService from '../../renderer/renderer.jsx'
+
 var appRenderer = null;
 
 /**
  * This component implements a 3D view into the current scene being edited.
  */
-var PreviewWindow = React.createClass({
+export default React.createClass({
     onClick: function(event) {
         event.stopPropagation();
         event.preventDefault();

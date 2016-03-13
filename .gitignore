@@ -11,9 +11,12 @@ node_modules
 build
 dist
 
+# Webpack bundle is built locally
+development/bundle.js
+
 # No need to version control generated files
-web-dev/**/*.html
-web-dev/**/*.css
-web-dev/**/*.css.map
-web-dev/**/*-compiled.js
-web-dev/**/*-compiled.js.map
+development/**/*.html
+development/**/*.css
+development/**/*.css.map
+development/**/*-compiled.js
+development/**/*-compiled.js.map

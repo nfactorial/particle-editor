@@ -4,11 +4,11 @@
         "folderMap": [
             {
                 "url": "/",
-                "path": "/web-dev"
+                "path": "/development"
             },
             {
                 "url": "/js",
-                "path": "/web-dev/js"
+                "path": "/development/js"
             },
             {
                 "url": "/node_modules",
@@ -18,7 +18,7 @@
         "fileMap": [
             {
                 "url": "/",
-                "path": "/web-dev/index.html"
+                "path": "/development/index.html"
             }
         ]
     },
@@ -27,7 +27,7 @@
         "folderMap": [
             {
                 "url": "/",
-                "path": "/web-dev"
+                "path": "/development"
             }
         ]
     }

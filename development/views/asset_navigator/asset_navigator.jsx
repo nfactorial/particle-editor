@@ -1,10 +1,16 @@
 "use strict";
 
+import React from 'react';
+
+import PreviewContainer from '../../components/preview_container/preview_container.jsx';
+import EmitterExplorer from '../../components/emitter_explorer/emitter_explorer.jsx';
+
+
 /**
  * This component manages the upper section of the applications main view.
  * The upper area contains the 3D preview window along with the asset inspector.
  */
-var AssetNavigator = React.createClass({
+export default React.createClass({
     getInitialState: function() {
         return { height: 200 };
     },

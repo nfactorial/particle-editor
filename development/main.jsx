@@ -1,3 +1,9 @@
+import ReactDOM from 'react-dom';
+
+import AssetNavigator from './views/asset_navigator/asset_navigator.jsx'
+import PropertyExplorer from './components/property_explorer/property_explorer.jsx'
+
+
 // TODO: This is temporary data for testing purposes. Eventually this information will be retrieved from the server
 var testEmitters = [
     {

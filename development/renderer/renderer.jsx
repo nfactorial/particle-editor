@@ -84,7 +84,7 @@ var defaultRenderConfig = {
 /**
  * This service manages the 3D rendering system for the application.
  */
-class RendererService {
+export default class RendererService {
     constructor(canvasElement) {
         this.canvas = canvasElement;
 

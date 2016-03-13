@@ -3,7 +3,8 @@
 var gulp = require('gulp'),
     babel = require('gulp-babel' ),
     sass = require('gulp-sass'),
-    del = require('del');
+    del = require('del'),
+    webpack = require('webpack');
 
 var sourceFolder = './web-dev', // Folder containing development code
     buildFolder = './build',    // Folder for temporary files during build process

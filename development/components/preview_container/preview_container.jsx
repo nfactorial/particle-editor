@@ -1,10 +1,16 @@
 "use strict";
 
+import React from 'react';
+
+import ToolGlyphIcon from '../tool_glyph_icon/tool_glyph_icon.jsx';
+import PreviewWindow from '../preview_window/preview_window.jsx';
+
+
 /**
  * This component is used for a UI element that encompasses the 3D preview.
  * We augment the 3D view with a head along with some extra controls.
  */
-var PreviewContainer = React.createClass({
+export default React.createClass({
     getInitialState: function() {
         return { width: 200 };
     },

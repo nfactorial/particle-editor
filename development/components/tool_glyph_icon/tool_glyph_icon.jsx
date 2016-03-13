@@ -1,5 +1,8 @@
 "use strict";
 
+import React from 'react';
+
+
 /**
  * Used to present a selectable tool icon to the user. The icon will highlight when the user
  * mouse-overs it.
@@ -9,7 +12,7 @@
  *
  * <ToolGlyphIcon icon="glyphicon-flag"/>
  */
-var ToolGlyphIcon = React.createClass({
+export default React.createClass({
     render: function() {
         var className = "pull-right glyphicon mouse-highlight " + this.props.icon;
         return (

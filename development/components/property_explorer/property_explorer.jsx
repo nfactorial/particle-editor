@@ -1,10 +1,13 @@
 "use strict";
 
+import Property from '../property/property.jsx';
+
+
 /**
  * This component allows the user to edit the properties of an element
  * selected within the application.
  */
-var PropertyExplorer = React.createClass({
+export default React.createClass({
     render: function() {
         var elements = this.props.data.properties.map(e => {
             return (

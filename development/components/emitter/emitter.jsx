@@ -1,5 +1,8 @@
 "use strict";
 
+import React from 'react';
+
+
 /**
  * Display the high-level information of an emitter within the current particle system.
  * A particle system may contain one or more emitters, an emitter spawns particles
@@ -10,7 +13,7 @@
  * selects an element for editing, the user-interface will be updated to display
  * the elements properties.
  */
-var Emitter = React.createClass({
+export default React.createClass({
     render: function() {
         var propertyElements = this.props.data.properties.map( e => {
             return (
