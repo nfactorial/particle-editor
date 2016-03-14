@@ -1,55 +1,13 @@
 import ReactDOM from 'react-dom';
+import Fluxible from 'fluxible';
 
-import AssetNavigator from './views/asset_navigator/asset_navigator.jsx'
-import PropertyExplorer from './components/property_explorer/property_explorer.jsx'
+import Application from './application/application.jsx';
 
+var app = new Fluxible({
 
-// TODO: This is temporary data for testing purposes. Eventually this information will be retrieved from the server
-var testEmitters = [
-    {
-        name: 'Emitter A',
-        properties: [
-            {
-                name: 'Lifetime',
-                enabled: true
-            },
-            {
-                name: 'Age',
-                enabled: true
-            },
-            {
-                name: 'Size',
-                enabled: true
-            }
-        ]
-    },
-    {
-        name: 'Second Emitter',
-        properties: [
-            {
-                name: 'Property',
-                enabled: true
-            }
-        ]
-    },
-    {
-        name: 'Third',
-        properties: [
-            {
-                name: 'Discover',
-                enabled: true
-            }
-        ]
-    }
-];
-
-var selectedElement = testEmitters[0];
-
+});
 
 ReactDOM.render(
-    <div>
-        <AssetNavigator data={testEmitters}/>
-        <PropertyExplorer data={selectedElement} />
-    </div>,
+    <Application/>,
     document.getElementById('example')
 );
