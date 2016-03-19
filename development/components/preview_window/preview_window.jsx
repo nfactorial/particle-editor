@@ -8,6 +8,7 @@ import RendererService from '../../renderer/renderer.jsx'
 require('./preview_window.sass');
 
 var appRenderer = null;
+var mouseHandler = null;
 
 
 /**
@@ -15,6 +16,12 @@ var appRenderer = null;
  * Also forwards the users input within the control to the input manager.
  */
 export default class PreviewWindow extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this._displayPort = null;
+    }
+
     /**
      * Event handler invoked when the user clicks on our component.
      * @param event
@@ -24,8 +31,36 @@ export default class PreviewWindow extends React.Component {
         event.stopPropagation();
         event.preventDefault();
 
-        if ( this._displayPort ) {
-            mouseHandler.onMouseDown( event );
+        return false;
+    }
+
+    /**
+     * Event handler invoked when the user presses a mouse button.
+     * @param event
+     * @returns {boolean}
+     */
+    onMouseDown(event) {
+        event.stopPropagation();
+        event.preventDefault();
+
+        if ( this._displayPort && mouseHandler ) {
+            mouseHandler.onMouseDown(event);
+        }
+
+        return false;
+    }
+
+    /**
+     * Event handler invoked when the user releases a mouse button.
+     * @param event
+     * @returns {boolean}
+     */
+    onMouseUp(event) {
+        event.stopPropagation();
+        event.preventDefault();
+
+        if ( this._displayPort && mouseHandler ) {
+            mouseHandler.onMouseUp(event);
         }
 
         return false;
@@ -40,7 +75,7 @@ export default class PreviewWindow extends React.Component {
         event.stopPropagation();
         event.preventDefault();
 
-        if ( this._displayPort ) {
+        if ( this._displayPort && mouseHandler ) {
             mouseHandler.onMouseMove( event );
         }
 
@@ -63,7 +98,9 @@ export default class PreviewWindow extends React.Component {
     componentDidMount() {
         if ( !appRenderer ) {
             appRenderer = new RendererService(this._canvas);
+            mouseHandler = NGEN.stateTree.findSystem('MouseHandler').instance;
         }
+
         this._displayPort = appRenderer.createDisplayPort();
 
         NGEN.renderer.setClearColor( 0x90909090, 1.0 );
@@ -82,6 +119,13 @@ export default class PreviewWindow extends React.Component {
      * @returns {XML} The child element that represents our current state.
      */
     render() {
-        return ( <div onClick={this.onClick} onMouseMove={this.onMouseMove} className="preview-window" ref={(c) => this._canvas = c} ></div> );
+        return ( <div onClick={this.onClick.bind(this)}
+                      onMouseUp={this.onMouseUp.bind(this)}
+                      onMouseDown={this.onMouseDown.bind(this)}
+                      onMouseMove={this.onMouseMove.bind(this)}
+                      className="preview-window"
+                      ref={(c) => this._canvas = c} >
+                </div>
+        );
     }
 }

@@ -16,6 +16,16 @@ import React from 'react';
  * the elements properties.
  */
 export default class Emitter extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = { isChecked: this.props.checked || true };
+    }
+
+    onChange(e) {
+        this.setState({ isChecked: e.target.checked });
+    }
+
     /**
      * Returns the child element to be presented to the user.
      * @returns {XML} The child element that represents our current state.
@@ -24,7 +34,10 @@ export default class Emitter extends React.Component {
         var propertyElements = this.props.data.properties.map( e => {
             return (
                 <li key={e.name}>
-                    <input type="checkbox" autoComplete="off" checked="checked"/>
+                    <input type="checkbox"
+                           checked={this.state.isChecked}
+                           onChange={e => this.onChange(e)}
+                    />
                     {e.name}
                 </li>
             );

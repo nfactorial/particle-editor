@@ -16,6 +16,7 @@ var defaultStates = {
                     name: "KeyboardHandler"
                 },
                 {
+                    type: "ReactMouseHandler",
                     name: "MouseHandler"
                 },
                 {
@@ -32,7 +33,7 @@ var defaultStates = {
                 }
             ],
             update: [
-                "KeyboardHandler", "ReactMouseHandler", "Physics", "ParticleSystemProvider", "EditorWorld"
+                "KeyboardHandler", "MouseHandler", "Physics", "ParticleSystemProvider", "EditorWorld"
             ]
         }
     ]
