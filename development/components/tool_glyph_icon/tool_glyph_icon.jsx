@@ -2,6 +2,8 @@
 
 import React from 'react';
 
+require('./tool_glyph_icon.sass');
+
 
 /**
  * Used to present a selectable tool icon to the user. The icon will highlight when the user
@@ -12,11 +14,15 @@ import React from 'react';
  *
  * <ToolGlyphIcon icon="glyphicon-flag"/>
  */
-export default React.createClass({
-    render: function() {
+export default class ToolGlyphIcon extends React.Component {
+    /**
+     * Returns the child element to be presented to the user.
+     * @returns {XML} The child element that represents our current state.
+     */
+    render() {
         var className = "pull-right glyphicon mouse-highlight " + this.props.icon;
         return (
             <span className={className} />
         );
     }
-});
+}

@@ -9,5 +9,6 @@ Requires Babel.JS for compilation.
 Uses webpack (https://webpack.github.io/) to install and run:
 
 ```
-npm install -g webpack-dev-server webpack
+npm install
+npm run dev
 ```

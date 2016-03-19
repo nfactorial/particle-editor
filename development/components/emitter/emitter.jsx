@@ -1,5 +1,7 @@
 "use strict";
 
+require('./emitter.sass');
+
 import React from 'react';
 
 
@@ -13,8 +15,12 @@ import React from 'react';
  * selects an element for editing, the user-interface will be updated to display
  * the elements properties.
  */
-export default React.createClass({
-    render: function() {
+export default class Emitter extends React.Component {
+    /**
+     * Returns the child element to be presented to the user.
+     * @returns {XML} The child element that represents our current state.
+     */
+    render() {
         var propertyElements = this.props.data.properties.map( e => {
             return (
                 <li key={e.name}>
@@ -31,4 +37,4 @@ export default React.createClass({
             </div>
         );
     }
-});
+}

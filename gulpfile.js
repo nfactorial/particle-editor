@@ -1,10 +1,14 @@
 "use strict";
 
 var gulp = require('gulp'),
+    gutil = require('gulp-util' ),
     babel = require('gulp-babel' ),
     sass = require('gulp-sass'),
     del = require('del'),
     webpack = require('webpack');
+
+// TODO: Load appropriate config for development/production
+var webpackConfig = require('./webpack.config.js');
 
 var sourceFolder = './web-dev', // Folder containing development code
     buildFolder = './build',    // Folder for temporary files during build process
@@ -20,6 +24,18 @@ gulp.task('default', [
  */
 gulp.task('clean:build', function() {
     return del.sync([buildFolder + '/**/*'])
+});
+
+
+/**
+ * Builds the webpack bundle for the application.
+ */
+gulp.task('webpack', function(callback) {
+    webpack(webpackConfig, function(err, stats) {
+        if ( err )
+            throw new gutil.PluginError('webpack', err);
+        callback();
+    });
 });
 
 

@@ -1,18 +1,25 @@
 "use strict";
 
-import React from 'react'
+import React from 'react';
 
-import AssetNavigator from '../views/asset_navigator/asset_navigator.jsx'
-import PropertyExplorer from '../components/property_explorer/property_explorer.jsx'
+import MouseHandler from './mouse_handler.jsx';
+import AssetNavigator from '../views/asset_navigator/asset_navigator.jsx';
+import PropertyExplorer from '../components/property_explorer/property_explorer.jsx';
 
-import { testEmitters, selectedElement } from './test_data.jsx'
+import { testEmitters, selectedElement } from './test_data.jsx';
+
+require('./application.sass');
 
 
 /**
  * Main view into the editing application.
  */
-export default React.createClass({
-    render: function() {
+export default class Application extends React.Component {
+    /**
+     * Returns the child element to be presented to the user.
+     * @returns {XML} The child element that represents our current state.
+     */
+    render() {
         return (
             <div>
                 <AssetNavigator data={testEmitters}/>
@@ -20,4 +27,4 @@ export default React.createClass({
             </div>
         );
     }
-});
+}

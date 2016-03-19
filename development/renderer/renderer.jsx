@@ -1,6 +1,6 @@
 "use strict";
 
-// Horrible file, will clean it up once everythings working. Mostly due to ngenjs
+// Horrible file, will clean it up once everything's working. Mostly due to ngenjs
 // still being in development.
 
 var defaultStates = {
@@ -32,7 +32,7 @@ var defaultStates = {
                 }
             ],
             update: [
-                "KeyboardHandler", "MouseHandler", "Physics", "ParticleSystemProvider", "EditorWorld"
+                "KeyboardHandler", "ReactMouseHandler", "Physics", "ParticleSystemProvider", "EditorWorld"
             ]
         }
     ]
