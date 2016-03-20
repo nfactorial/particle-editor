@@ -5,10 +5,26 @@
 module.exports.testEmitters = [
     {
         name: 'Emitter A',
-        properties: [
+        modules: [
             {
                 name: 'Lifetime',
-                enabled: true
+                enabled: true,
+                properties: [
+                    {
+                        name: 'Minimum Age',
+                        type: 'scalar',
+                        minimum: 0.0,
+                        maximum: 10.0,
+                        value: 0.5
+                    },
+                    {
+                        name: 'Maximum Age',
+                        type: 'scalar',
+                        minimum: 0.0,
+                        maximum: 10.0,
+                        value: 1
+                    }
+                ]
             },
             {
                 name: 'Age',
@@ -22,7 +38,7 @@ module.exports.testEmitters = [
     },
     {
         name: 'Second Emitter',
-        properties: [
+        modules: [
             {
                 name: 'Property',
                 enabled: true
@@ -31,7 +47,7 @@ module.exports.testEmitters = [
     },
     {
         name: 'Third',
-        properties: [
+        modules: [
             {
                 name: 'Discover',
                 enabled: true
@@ -40,4 +56,5 @@ module.exports.testEmitters = [
     }
 ];
 
-module.exports.selectedElement = module.exports.testEmitters[0];
+module.exports.selectedEmitter = module.exports.testEmitters[0];
+module.exports.selectedModule = module.exports.selectedEmitter.modules[0];

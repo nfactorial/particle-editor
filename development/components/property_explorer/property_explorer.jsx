@@ -20,7 +20,7 @@ export default class PropertyExplorer extends React.Component {
         if ( this.props.data && this.props.data.properties ) {
             elements = this.props.data.properties.map(e => {
                 return (
-                    <Property key={e.name} name={e.name} />
+                    <Property key={e.name} data={e} />
                 );
             });
         }

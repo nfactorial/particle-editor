@@ -3,6 +3,7 @@
 require('./emitter.sass');
 
 import React from 'react';
+import EmitterModule from '../emitter_module/emitter_module.jsx';
 
 
 /**
@@ -38,17 +39,10 @@ export default class Emitter extends React.Component {
         let propertyElements = [];
         const header = this.props.data !== undefined ? this.props.data.name || '' : '';
 
-        if ( this.props.data && this.props.data.properties ) {
-            propertyElements = this.props.data.properties.map( e => {
+        if ( this.props.data && this.props.data.modules ) {
+            propertyElements = this.props.data.modules.map( e => {
                 return (
-                    <li key={e.name}>
-                        <input type="checkbox"
-                               checked={this.state.isChecked}
-                               onChange={this.onChange.bind(this)}
-                               ref={e}
-                        />
-                        {e.name}
-                    </li>
+                    <EmitterModule module={e} />
                 );
             });
         }

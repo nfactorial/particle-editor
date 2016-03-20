@@ -1,0 +1,67 @@
+$property-background-color: #9A9A9A
+
+$property-border-color: #DDD
+$property-active-color: #00BCBA
+$property-active-background: #E5E5E5
+
+$property-panel-width: 300px
+
+$property-label-width: 140px
+$property-label-color: #BBBBBB
+
+$property-value-width: 146px
+$property-value-color: #333333
+
+$property-icon-color: #222222
+$property-icon-hover: #0a68b4
+
+.property-icon
+  color: $property-icon-color
+  vertical-align: middle
+  height: 100%
+
+  &:hover
+    color: $property-icon-hover
+
+.property-label
+  padding: 0
+  margin: 0
+  color: $property-label-color
+  font-family: Helvetica, Arial, sans-serif
+  font-size: 14px
+  text-align: right
+  vertical-align: middle
+  display: inline-block
+  width: $property-label-width
+
+.property-scalar
+  position: relative
+  margin-bottom: 4px
+  display: block
+  width: $property-panel-width
+
+  .property-scalar-container
+    position: relative
+    display: inline-block
+    color: $property-value-color
+    margin-left: 0
+    top: 0
+    height: 100%
+    width: $property-value-width
+    background: $property-background-color
+
+    .property-scalar-handle
+      cursor: pointer
+      display: inline-block
+      position: absolute
+      height: 100%
+      z-index: 1
+      background: $property-active-color
+
+    .property-scalar-active
+      background: $property-active-background
+      left: 0
+      top: 0
+      height: 100%
+      display: inline-block
+      position: absolute

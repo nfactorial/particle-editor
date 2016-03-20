@@ -25,7 +25,7 @@ describe('components/property_explorer', () => {
 
     it('Renders correctly with a single property', () => {
         const testName = 'test-name';
-        const testProperty = { name: testName };
+        const testProperty = { name: testName, type: 'scalar' };
         const testData = {
             properties: [
                 testProperty
@@ -39,7 +39,7 @@ describe('components/property_explorer', () => {
 
         expect(result.props.children).to.deep.equal([
             <p className="section-header">Properties</p>,
-            [<Property key={testName} name={testName} />]
+            [<Property key={testName} data={testProperty} />]
         ]);
     })
 });

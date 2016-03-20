@@ -6,7 +6,7 @@ import MouseHandler from './mouse_handler.jsx';
 import AssetNavigator from '../views/asset_navigator/asset_navigator.jsx';
 import PropertyExplorer from '../components/property_explorer/property_explorer.jsx';
 
-import { testEmitters, selectedElement } from './test_data.jsx';
+import { testEmitters, selectedEmitter, selectedModule } from './test_data.jsx';
 
 require('./application.sass');
 
@@ -23,7 +23,7 @@ export default class Application extends React.Component {
         return (
             <div>
                 <AssetNavigator data={testEmitters}/>
-                <PropertyExplorer data={selectedElement} />
+                <PropertyExplorer data={selectedModule} />
             </div>
         );
     }
