@@ -14,6 +14,8 @@ var mouseHandler = null;
 /**
  * A 3D view into the current scene being edited.
  * Also forwards the users input within the control to the input manager.
+ * This class overrides the default mouse input handling for the element
+ * and forwards it onto the mouse handler registered within ngen.
  */
 export default class PreviewWindow extends React.Component {
     constructor(props) {

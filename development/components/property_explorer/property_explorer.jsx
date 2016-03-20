@@ -1,4 +1,5 @@
 "use strict";
+import React from 'react';
 
 import Property from '../property/property.jsx';
 
@@ -15,11 +16,14 @@ export default class PropertyExplorer extends React.Component {
      * @returns {XML} The child element that represents our current state.
      */
     render() {
-        var elements = this.props.data.properties.map(e => {
-            return (
-                <Property key={e.name} name={e.name} />
-            );
-        });
+        var elements = [];
+        if ( this.props.data && this.props.data.properties ) {
+            elements = this.props.data.properties.map(e => {
+                return (
+                    <Property key={e.name} name={e.name} />
+                );
+            });
+        }
 
         return (
             <div className="property-explorer">

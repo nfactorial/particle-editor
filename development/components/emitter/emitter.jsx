@@ -22,6 +22,10 @@ export default class Emitter extends React.Component {
         this.state = { isChecked: this.props.checked || true };
     }
 
+    /**
+     * Called when a checkbox has changed its state.
+     * @param e
+     */
     onChange(e) {
         this.setState({ isChecked: e.target.checked });
     }
@@ -31,21 +35,27 @@ export default class Emitter extends React.Component {
      * @returns {XML} The child element that represents our current state.
      */
     render() {
-        var propertyElements = this.props.data.properties.map( e => {
-            return (
-                <li key={e.name}>
-                    <input type="checkbox"
-                           checked={this.state.isChecked}
-                           onChange={e => this.onChange(e)}
-                    />
-                    {e.name}
-                </li>
-            );
-        });
+        let propertyElements = [];
+        const header = this.props.data !== undefined ? this.props.data.name || '' : '';
+
+        if ( this.props.data && this.props.data.properties ) {
+            propertyElements = this.props.data.properties.map( e => {
+                return (
+                    <li key={e.name}>
+                        <input type="checkbox"
+                               checked={this.state.isChecked}
+                               onChange={this.onChange.bind(this)}
+                               ref={e}
+                        />
+                        {e.name}
+                    </li>
+                );
+            });
+        }
 
         return (
             <div className="emitter">
-                <p className="section-header">{this.props.data.name}</p>
+                <p className="section-header">{header}</p>
                 <ul className="list-inline">{propertyElements}</ul>
             </div>
         );
