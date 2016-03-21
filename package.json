@@ -25,6 +25,8 @@
     "gulp-sass": "^2.2.0",
     "gulp-util": "^3.0.7",
     "ignore-styles": "^1.2.0",
+    "jade": "^1.11.0",
+    "jade-loader": "^0.8.0",
     "react-addons-test-utils": "^0.14.7",
     "sass-loader": "^3.2.0",
     "script-loader": "^0.6.1",

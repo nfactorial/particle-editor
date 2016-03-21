@@ -15,7 +15,6 @@ dist
 development/bundle.js
 
 # No need to version control generated files
-development/**/*.html
 development/**/*.css
 development/**/*.css.map
 development/**/*-compiled.js
