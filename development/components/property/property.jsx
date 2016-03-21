@@ -7,12 +7,23 @@ require('./property.sass');
 
 
 export default class Property extends React.Component {
+    constructor(props) {
+        super(props);
+
+        // TODO: The value should be managed by the application rather than directly in here.
+        //       Use a change event, so we can listen to external changes as well as internal.
+        this.state = { value: props.data.value };
+    }
 /*
 <span className="property-scalar-container">
 <span>{this.props.data.value}</span>
 <span className="pull-right glyphicon mouse-highlight glyphicon-resize-vertical property-icon" />
 </span>
 */
+    onChange(e) {
+        this.setState({ value: e.target.value });
+    }
+
     /**
      * Renders the HTML elements that will represent a slider control for a scalar value.
      * @returns {XML} The HTML data for the slider control.
@@ -21,8 +32,13 @@ export default class Property extends React.Component {
         return (
             <div className="property-scalar" data-slider>
                 <span className="property-label">{this.props.data.name}</span>
-                <input className="property-scalar-container" >
-                    <span className="pull-right glyphicon glyphicon-resize-vertical property-icon" />
+                <input type="number"
+                       className="property-scalar-container"
+                       min={this.props.data.minimum}
+                       max={this.props.data.maximum}
+                       value={this.state.value}
+                       onChange={this.onChange.bind(this)}
+                >
                 </input>
             </div>
         );

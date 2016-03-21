@@ -10,7 +10,9 @@ $property-label-width: 140px
 $property-label-color: #BBBBBB
 
 $property-value-width: 146px
-$property-value-color: #333333
+$property-value-color: #999999
+$property-value-background: #666666
+$property-value-border: 1px solid #333333
 
 $property-icon-color: #222222
 $property-icon-hover: #0a68b4
@@ -41,14 +43,15 @@ $property-icon-hover: #0a68b4
   width: $property-panel-width
 
   .property-scalar-container
+    background: $property-value-background
+    border: $property-value-border
+    color: $property-value-color
     position: relative
     display: inline-block
-    color: $property-value-color
     margin-left: 0
     top: 0
     height: 100%
     width: $property-value-width
-    background: $property-background-color
 
     .property-scalar-handle
       cursor: pointer
