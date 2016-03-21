@@ -1,7 +1,6 @@
 "use strict";
 
 import React from 'react';
-import ToolGlyphIcon from '../tool_glyph_icon/tool_glyph_icon.jsx'
 
 require('./property.sass');
 
@@ -20,6 +19,10 @@ export default class Property extends React.Component {
 <span className="pull-right glyphicon mouse-highlight glyphicon-resize-vertical property-icon" />
 </span>
 */
+    /**
+     * Callback invoked by React when the numeric value has been changed.
+     * @param e Event information about the change.
+     */
     onChange(e) {
         this.setState({ value: e.target.value });
     }
